@@ -1,7 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://dbr3dh46cbskt"]
+[gd_scene load_steps=6 format=3 uid="uid://dbr3dh46cbskt"]
 
 [ext_resource type="PackedScene" uid="uid://2briludp3y6q" path="res://models/prototyping/models/wall.glb" id="1_jc8pj"]
 [ext_resource type="Texture2D" uid="uid://72ldk18ropuj" path="res://models/props/Textures/colormap.png" id="2_fs418"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6t6uf"]
+albedo_color = Color(0.254394, 6.61798e-08, 0.129175, 1)
+distance_fade_mode = 1
+distance_fade_max_distance = 12.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nj181"]
 albedo_texture = ExtResource("2_fs418")
@@ -16,6 +21,7 @@ size = Vector3(0.25, 1, 1)
 [node name="wall2" parent="." instance=ExtResource("1_jc8pj")]
 
 [node name="wall" parent="wall2" index="0"]
+material_override = SubResource("StandardMaterial3D_6t6uf")
 surface_material_override/0 = SubResource("StandardMaterial3D_nj181")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
