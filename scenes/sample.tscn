@@ -1,4 +1,4 @@
-[gd_scene load_steps=277 format=3 uid="uid://e6jwbml72r4o"]
+[gd_scene load_steps=276 format=3 uid="uid://e6jwbml72r4o"]
 
 [ext_resource type="Environment" uid="uid://bqnqgflivjvue" path="res://scenes/main-environment.tres" id="1_apxki"]
 [ext_resource type="PackedScene" uid="uid://dl2ed4gkybggf" path="res://objects/player.tscn" id="2_hgw2l"]
@@ -266,11 +266,10 @@
 [ext_resource type="PackedScene" uid="uid://d16ldw73ada7w" path="res://models/prototyping/models/weapon-shield.glb" id="264_rr7np"]
 [ext_resource type="PackedScene" uid="uid://c48perftxj5a6" path="res://models/prototyping/models/weapon-sword.glb" id="265_78v47"]
 [ext_resource type="PackedScene" uid="uid://dclbr6h5m4kw8" path="res://models/prototyping/models/wheelchair.glb" id="266_p17e7"]
-[ext_resource type="PackedScene" uid="uid://c5tnemgrp2eqk" path="res://objects/section.tscn" id="267_3vi8f"]
 [ext_resource type="PackedScene" uid="uid://d21jt2g5r8jt5" path="res://models/core_models/stairs_small_2.tscn" id="267_4oopf"]
+[ext_resource type="PackedScene" uid="uid://cjj1riq822gpx" path="res://objects/moving_box.tscn" id="267_5lv34"]
+[ext_resource type="PackedScene" uid="uid://cmjug11lh2a1u" path="res://objects/section.tscn" id="267_qyw0y"]
 [ext_resource type="PackedScene" uid="uid://c3sjly2tetaqu" path="res://models/core_models/carpet.tscn" id="268_31vjr"]
-[ext_resource type="PackedScene" uid="uid://b4pc1cu7pubjs" path="res://moving_box_3.tscn" id="269_3fofa"]
-[ext_resource type="PackedScene" uid="uid://duakiin8lo02u" path="res://objects/moving_box.tscn" id="269_wk38o"]
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_u8ojw"]
 auto_exposure_scale = 0.75
@@ -310,7 +309,6 @@ camera_attributes = SubResource("CameraAttributesPractical_u8ojw")
 
 [node name="Player" parent="." node_paths=PackedStringArray("view") instance=ExtResource("2_hgw2l")]
 transform = Transform3D(-0.605864, 0, -0.795569, 0, 1, 0, 0.795569, 0, -0.605864, 25.0356, 1.46234, -51.1468)
-collision_layer = 19
 view = NodePath("../View")
 
 [node name="View" type="Node3D" parent="." node_paths=PackedStringArray("target") groups=["View"]]
@@ -1393,17 +1391,15 @@ transform = Transform3D(0.00848213, 0, -32.9988, 0, 30, 0, 0.999964, 0, 0.279911
 [node name="door" parent="Real World/Left Wall" instance=ExtResource("13_2py5d")]
 transform = Transform3D(-1.63, 0, 0.000558376, 0, 2.01, 0, -0.000910163, 0, -1, -24.8922, 0.45871, 0.216316)
 
-[node name="button" parent="Real World/Left Wall" instance=ExtResource("12_kk8bf")]
+[node name="button" parent="Real World/Left Wall" node_paths=PackedStringArray("target") instance=ExtResource("12_kk8bf")]
+transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, -22.3903, 0.508644, -1.72284)
+target = NodePath("../door")
 
-[node name="Section" parent="Real World/Left Wall" instance=ExtResource("267_3vi8f")]
-transform = Transform3D(-0.14613, 0, -3.67971, 0, 2.5, 0, 11.6441, 0, -0.0461794, -34.6446, 0.551798, 11.735)
+[node name="Moving Box" parent="Real World/Left Wall" instance=ExtResource("267_5lv34")]
+transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, -4.61099, 0.646839, -13.143)
 
-[node name="Moving Box" parent="Real World/Left Wall" instance=ExtResource("269_wk38o")]
-physics_interpolation_mode = 1
-transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, -8.82121, 11.9172, -14.1508)
-
-[node name="Moving Box3" parent="Real World/Left Wall" instance=ExtResource("269_3fofa")]
-transform = Transform3D(0.761878, 0, 0.647721, 0, 1, 0, -0.647721, 0, 0.761878, -0.241716, 14.3978, -14.2644)
+[node name="Section" parent="Real World/Left Wall" instance=ExtResource("267_qyw0y")]
+transform = Transform3D(5.06977, 0, -0.0284829, 0, 2.5, 0, 0.0481362, 0, 2.99986, -33.9042, 0.460106, 11.8983)
 
 [node name="floor" parent="Real World" instance=ExtResource("5_ly2vk")]
 transform = Transform3D(4.47382, 0, 7.6911, 0, 1, 0, -5.38377, 0, 6.39117, -11.948, 0, -3.29575)
