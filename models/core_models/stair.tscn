@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://ccyejqj61sw8f"]
+
+[ext_resource type="PackedScene" uid="uid://cko0ga7jxgxo3" path="res://models/prototyping/models/stairs-small.glb" id="1_l43qx"]
+
+[node name="Stair" type="Node3D"]
+
+[node name="Stair2" type="Node3D" parent="."]
+
+[node name="stairs-small2" parent="Stair2" instance=ExtResource("1_l43qx")]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=272 format=3 uid="uid://e6jwbml72r4o"]
+[gd_scene load_steps=274 format=3 uid="uid://e6jwbml72r4o"]
 
 [ext_resource type="Environment" uid="uid://bqnqgflivjvue" path="res://scenes/main-environment.tres" id="1_apxki"]
 [ext_resource type="PackedScene" uid="uid://dl2ed4gkybggf" path="res://objects/player.tscn" id="2_hgw2l"]
@@ -266,6 +266,8 @@
 [ext_resource type="PackedScene" uid="uid://d16ldw73ada7w" path="res://models/prototyping/models/weapon-shield.glb" id="264_rr7np"]
 [ext_resource type="PackedScene" uid="uid://c48perftxj5a6" path="res://models/prototyping/models/weapon-sword.glb" id="265_78v47"]
 [ext_resource type="PackedScene" uid="uid://dclbr6h5m4kw8" path="res://models/prototyping/models/wheelchair.glb" id="266_p17e7"]
+[ext_resource type="PackedScene" uid="uid://d21jt2g5r8jt5" path="res://models/core_models/stairs_small_2.tscn" id="267_4oopf"]
+[ext_resource type="PackedScene" uid="uid://c3sjly2tetaqu" path="res://models/core_models/carpet.tscn" id="268_31vjr"]
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_u8ojw"]
 auto_exposure_scale = 0.75
@@ -304,7 +306,7 @@ environment = ExtResource("1_apxki")
 camera_attributes = SubResource("CameraAttributesPractical_u8ojw")
 
 [node name="Player" parent="." node_paths=PackedStringArray("view") instance=ExtResource("2_hgw2l")]
-transform = Transform3D(-0.436802, 0, -0.899558, 0, 1, 0, 0.899558, 0, -0.436802, 0, 7.58336, 30.5037)
+transform = Transform3D(-0.999643, 0, 0.0267179, 0, 1, 0, -0.0267179, 0, -0.999643, 28.3012, 1.46234, -49.7947)
 view = NodePath("../View")
 
 [node name="View" type="Node3D" parent="." node_paths=PackedStringArray("target") groups=["View"]]
@@ -1331,6 +1333,90 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -30.5423, 2.65714, 0.622322)
 
 [node name="wall2" parent="." instance=ExtResource("25_ow4b3")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -30.5423, 2.65714, -3.41335)
+
+[node name="Real World" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.3577, 0, -59.7845)
+
+[node name="Right Wall" type="Node3D" parent="Real World"]
+transform = Transform3D(0.769065, 0, -0.639171, 0, 1, 0, 0.639171, 0, 0.769065, 8.2551, 0, -6.68485)
+
+[node name="wall3" parent="Real World/Right Wall" instance=ExtResource("25_ow4b3")]
+transform = Transform3D(0.00848213, 0, -9.99964, 0, 30, 0, 0.999964, 0, 0.0848217, -31.3642, 0.45871, 0.300026)
+
+[node name="wall4" parent="Real World/Right Wall" instance=ExtResource("25_ow4b3")]
+transform = Transform3D(0.00848213, 0, -9.99964, 0, 26, 0, 0.999964, 0, 0.0848217, -26.2163, 4.49568, 0.256355)
+
+[node name="wall5" parent="Real World/Right Wall" instance=ExtResource("25_ow4b3")]
+transform = Transform3D(0.00339283, -6.50477, 1.91668e-07, 0, -2.84343e-07, -4.385, 0.399986, 0.0551759, -1.6258e-09, -25.768, 5.50045, 0.237305)
+
+[node name="wall6" parent="Real World/Right Wall" instance=ExtResource("25_ow4b3")]
+transform = Transform3D(0.00339283, -1.21637e-07, -10.9796, 0, 7.8, -1.71234e-07, 0.399986, 1.03177e-09, 0.0931332, -18.6032, 3.1, 0.189262)
+
+[node name="wall7" parent="Real World/Right Wall" instance=ExtResource("25_ow4b3")]
+transform = Transform3D(0.00339283, -8.11971, 2.55484e-07, 0, -3.54936e-07, -5.845, 0.399986, 0.0688744, -2.16711e-09, -23.5743, 6.6463, 0.214966)
+
+[node name="wall" parent="Real World/Right Wall" instance=ExtResource("25_ow4b3")]
+transform = Transform3D(0.00848213, 0, -32.9988, 0, 30, 0, 0.999964, 0, 0.279911, -6.84802, 0.43995, 0.0920639)
+
+[node name="door" parent="Real World/Right Wall" instance=ExtResource("13_2py5d")]
+transform = Transform3D(-1.63, 0, 0.000558376, 0, 2.01, 0, -0.000910163, 0, -1, -24.8922, 0.45871, 0.216316)
+look_at_door_when_opens = true
+
+[node name="Left Wall" type="Node3D" parent="Real World"]
+transform = Transform3D(0.761878, 0, -0.647721, 0, 1, 0, 0.647721, 0, 0.761878, -11.4129, 0, 16.9801)
+
+[node name="wall3" parent="Real World/Left Wall" instance=ExtResource("25_ow4b3")]
+transform = Transform3D(0.00848213, 0, -9.99964, 0, 30, 0, 0.999964, 0, 0.0848217, -31.3642, 0.45871, 0.300026)
+
+[node name="wall4" parent="Real World/Left Wall" instance=ExtResource("25_ow4b3")]
+transform = Transform3D(0.00848213, 0, -9.99964, 0, 26, 0, 0.999964, 0, 0.0848217, -26.2163, 4.49568, 0.256355)
+
+[node name="wall5" parent="Real World/Left Wall" instance=ExtResource("25_ow4b3")]
+transform = Transform3D(0.00411381, -6.50477, 1.91668e-07, 0, -2.84343e-07, -4.385, 0.484983, 0.0551759, -1.6258e-09, -25.7674, 5.50045, 0.302698)
+
+[node name="wall6" parent="Real World/Left Wall" instance=ExtResource("25_ow4b3")]
+transform = Transform3D(0.00411381, -1.21637e-07, -10.9796, 0, 7.8, -1.71234e-07, 0.484983, 1.03177e-09, 0.0931332, -18.6027, 3.1, 0.240773)
+
+[node name="wall7" parent="Real World/Left Wall" instance=ExtResource("25_ow4b3")]
+transform = Transform3D(0.00411381, -8.11971, 2.55484e-07, 0, -3.54936e-07, -5.845, 0.484983, 0.0688744, -2.16711e-09, -23.5738, 6.6463, 0.274327)
+
+[node name="wall" parent="Real World/Left Wall" instance=ExtResource("25_ow4b3")]
+transform = Transform3D(0.00848213, 0, -32.9988, 0, 30, 0, 0.999964, 0, 0.279911, -6.84802, 0.43995, 0.0920639)
+
+[node name="door" parent="Real World/Left Wall" instance=ExtResource("13_2py5d")]
+transform = Transform3D(-1.63, 0, 0.000558376, 0, 2.01, 0, -0.000910163, 0, -1, -24.8922, 0.45871, 0.216316)
+look_at_door_when_opens = true
+
+[node name="button" parent="Real World/Left Wall" node_paths=PackedStringArray("target") instance=ExtResource("12_kk8bf")]
+transform = Transform3D(0.999989, 0, -0.00462511, 0, 1, 0, 0.00462511, 0, 0.999989, -22.2716, 0.508582, -1.52701)
+target = NodePath("../door")
+
+[node name="floor" parent="Real World" instance=ExtResource("5_ly2vk")]
+transform = Transform3D(4.47382, 0, 7.6911, 0, 1, 0, -5.38377, 0, 6.39117, -11.948, 0, -3.29575)
+
+[node name="floor2" parent="Real World" instance=ExtResource("5_ly2vk")]
+transform = Transform3D(4.47382, 0, 7.6911, 0, 1, 0, -5.38377, 0, 6.39117, -33.948, 0, 22.7043)
+
+[node name="Bottom Wall" parent="Real World" instance=ExtResource("25_ow4b3")]
+transform = Transform3D(0.767299, 0, -21.1625, 0, 30, 0, 0.641289, 0, 25.3209, 6.11233, 0.43995, 10.9195)
+
+[node name="Bottom Wall2" parent="Real World" instance=ExtResource("25_ow4b3")]
+transform = Transform3D(0.767299, 0, -21.1625, 0, 30, 0, 0.641289, 0, 25.3209, 6.11233, 0.43995, 10.9195)
+
+[node name="Top Wall" parent="Real World" instance=ExtResource("25_ow4b3")]
+transform = Transform3D(0.767299, 0, -21.1625, 0, 30, 0, 0.641289, 0, 25.3209, -29.2132, 0.43995, -18.6047)
+
+[node name="stairs-small2" parent="Real World" instance=ExtResource("267_4oopf")]
+transform = Transform3D(-2.68018, 0, 2.27417, 0, 3.515, 0, -2.27417, 0, -2.68018, -24.7466, 0.5, -12.7443)
+
+[node name="Carpet" parent="." instance=ExtResource("268_31vjr")]
+transform = Transform3D(27.6192, 0, -1.52777, 0, 1, 0, 23.1219, 0, 1.82492, 15.2837, 0.5, -59.345)
+
+[node name="Carpet2" parent="." instance=ExtResource("268_31vjr")]
+transform = Transform3D(8.66589, 0, 1.82492, 0, 1, 0, -10.3514, 0, 1.52777, -1.71631, 0.5, -64.345)
+
+[node name="Carpet3" parent="." instance=ExtResource("268_31vjr")]
+transform = Transform3D(9.48434, 0, 1.82492, 0, 1, 0, -11.3291, 0, 1.52777, 8.28369, 0.5, -76.345)
 
 [connection signal="coin_collected" from="Player" to="HUD" method="_on_coin_collected"]
 [connection signal="reached_goal" from="Player" to="HUD" method="_on_player_reached_goal"]
