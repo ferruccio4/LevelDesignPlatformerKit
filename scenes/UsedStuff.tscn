@@ -1,0 +1,68 @@
+[gd_scene load_steps=17 format=3 uid="uid://crajmrsytycs"]
+
+[ext_resource type="PackedScene" uid="uid://uqr4hswv6d2g" path="res://objects/platform_grass_large_round.tscn" id="1_uv4ib"]
+[ext_resource type="PackedScene" uid="uid://rjh4ifidqrfp" path="res://objects/platform_medium.tscn" id="2_tuvam"]
+[ext_resource type="PackedScene" uid="uid://bpharv43ulngb" path="res://objects/platform_moving.tscn" id="3_3rho8"]
+[ext_resource type="PackedScene" uid="uid://c8up71en5djgm" path="res://objects/platform_falling.tscn" id="4_evlp5"]
+[ext_resource type="PackedScene" uid="uid://cjj1riq822gpx" path="res://objects/moving_box.tscn" id="5_1vkdn"]
+[ext_resource type="PackedScene" uid="uid://dhxok27jxvik8" path="res://objects/flag.tscn" id="6_b62hv"]
+[ext_resource type="PackedScene" uid="uid://0v6t454aaexr" path="res://objects/door.tscn" id="7_jvvuo"]
+[ext_resource type="PackedScene" uid="uid://dfpisimsgf5ce" path="res://objects/coin.tscn" id="8_6iw7b"]
+[ext_resource type="PackedScene" uid="uid://cyvet7kb6y80r" path="res://objects/checkpoint.tscn" id="9_weivu"]
+[ext_resource type="PackedScene" uid="uid://g73m8k0j7lyo" path="res://objects/button.tscn" id="10_h3ijy"]
+[ext_resource type="PackedScene" uid="uid://bprrlrsrodjse" path="res://objects/saw.tscn" id="11_1t6hf"]
+[ext_resource type="PackedScene" uid="uid://cmjug11lh2a1u" path="res://objects/section.tscn" id="12_o4cm6"]
+[ext_resource type="PackedScene" uid="uid://dppaaoqj1t6n5" path="res://objects/spike_block.tscn" id="13_wunmo"]
+[ext_resource type="PackedScene" uid="uid://dpo3dr26b06w3" path="res://objects/spike_block_wide.tscn" id="14_qgyht"]
+[ext_resource type="PackedScene" uid="uid://dwvhgrcyestak" path="res://objects/trap_spikes.tscn" id="15_a7dy6"]
+[ext_resource type="PackedScene" uid="uid://dbr3dh46cbskt" path="res://objects/wall.tscn" id="16_8sn1o"]
+
+[node name="UsedStuff" type="Node3D"]
+
+[node name="platform-grass-large-round" parent="." instance=ExtResource("1_uv4ib")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+
+[node name="platform-medium" parent="platform-grass-large-round" instance=ExtResource("2_tuvam")]
+transform = Transform3D(0.333333, 0, 0, 0, 0.333333, 0, 0, 0, 0.333333, -1.96679, 0.533021, 0)
+
+[node name="platform-moving" parent="platform-grass-large-round" instance=ExtResource("3_3rho8")]
+transform = Transform3D(0.333333, 0, 0, 0, 0.333333, 0, 0, 0, 0.333333, -1.97904, 0.546333, -0.977207)
+
+[node name="platform-falling" parent="platform-grass-large-round" instance=ExtResource("4_evlp5")]
+transform = Transform3D(0.333333, 0, 0, 0, 0.333333, 0, 0, 0, 0.333333, -1.99673, 0.526567, 0.902526)
+
+[node name="Moving Box" parent="platform-grass-large-round" instance=ExtResource("5_1vkdn")]
+transform = Transform3D(0.333333, 0, 0, 0, 0.333333, 0, 0, 0, 0.333333, -1.1897, 0.886561, 0.954141)
+
+[node name="flag" parent="platform-grass-large-round" instance=ExtResource("6_b62hv")]
+transform = Transform3D(0.333333, 0, 0, 0, 0.333333, 0, 0, 0, 0.333333, 0.517054, 0.530535, 0)
+
+[node name="door" parent="platform-grass-large-round" instance=ExtResource("7_jvvuo")]
+transform = Transform3D(0.333333, 0, 0, 0, 0.333333, 0, 0, 0, 0.333333, 0.484219, 0.551413, -0.448017)
+
+[node name="coin" parent="platform-grass-large-round" instance=ExtResource("8_6iw7b")]
+transform = Transform3D(0.333333, 0, 0, 0, 0.333333, 0, 0, 0, 0.333333, 0.254542, 0.55242, 0)
+
+[node name="checkpoint" parent="platform-grass-large-round" instance=ExtResource("9_weivu")]
+transform = Transform3D(0.333333, 0, 0, 0, 0.333333, 0, 0, 0, 0.333333, 0.921566, 0.477782, 0)
+
+[node name="button" parent="platform-grass-large-round" instance=ExtResource("10_h3ijy")]
+transform = Transform3D(0.333333, 0, 0, 0, 0.333333, 0, 0, 0, 0.333333, 0.78308, 0.522089, 0.454764)
+
+[node name="saw" parent="platform-grass-large-round" instance=ExtResource("11_1t6hf")]
+transform = Transform3D(0.333333, 0, 0, 0, 0.333333, 0, 0, 0, 0.333333, 0.348354, 0.937257, 1.40005)
+
+[node name="Section" parent="platform-grass-large-round" instance=ExtResource("12_o4cm6")]
+transform = Transform3D(0.333333, 0, 0, 0, 0.333333, 0, 0, 0, 0.333333, -1.21352, 0.472322, 0.199848)
+
+[node name="spike-block" parent="platform-grass-large-round" instance=ExtResource("13_wunmo")]
+transform = Transform3D(0.33326, 0.00701571, 0, -0.00701571, 0.33326, 0, 0, 0, 0.333333, -0.11683, 0.915749, 0.658872)
+
+[node name="spike-block-wide" parent="platform-grass-large-round" instance=ExtResource("14_qgyht")]
+transform = Transform3D(0.333333, 0, 0, 0, 0.333333, 0, 0, 0, 0.333333, 1.4383, 0.857152, 0.886036)
+
+[node name="trap-spikes" parent="platform-grass-large-round" instance=ExtResource("15_a7dy6")]
+transform = Transform3D(0.333333, 0, 0, 0, 0.333333, 0, 0, 0, 0.333333, -0.129704, 0.86289, 1.31184)
+
+[node name="wall" parent="platform-grass-large-round" instance=ExtResource("16_8sn1o")]
+transform = Transform3D(0.333333, 0, 0, 0, 0.333333, 0, 0, 0, 0.333333, -1.2521, 0.513624, -0.265011)
