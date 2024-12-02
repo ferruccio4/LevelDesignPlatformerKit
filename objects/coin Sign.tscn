@@ -67,6 +67,7 @@ skeleton = NodePath("")
 [node name="SubViewport" type="SubViewport" parent="."]
 transparent_bg = true
 size = Vector2i(862, 842)
+render_target_update_mode = 4
 
 [node name="CanvasLayer" type="CanvasLayer" parent="SubViewport"]
 offset = Vector2(160, 140)
