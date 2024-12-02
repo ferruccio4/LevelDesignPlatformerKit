@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://cjj1riq822gpx"]
+
+[ext_resource type="PackedScene" uid="uid://02v51studkj5" path="res://models/props/block-moving-blue.glb" id="1_el4xl"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yw4kf"]
+size = Vector3(1, 0.430471, 1.01172)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7swft"]
+size = Vector3(1.96941, 0.0533813, 1.96552)
+
+[node name="Moving Box" type="Node3D"]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+collision_layer = 16
+
+[node name="block-moving-blue2" parent="RigidBody3D" instance=ExtResource("1_el4xl")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.531755, -0.0117188)
+shape = SubResource("BoxShape3D_yw4kf")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="RigidBody3D"]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="RigidBody3D/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00685686, 0.994588, -0.0072238)
+shape = SubResource("BoxShape3D_7swft")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="RigidBody3D"]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="RigidBody3D/StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00860065, 0.0287721, -0.0220229)
+shape = SubResource("BoxShape3D_7swft")
